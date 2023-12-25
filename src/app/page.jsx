@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main className="flex justify-center items-center flex-col gap-[20px] h-screen">
       <sector id="title1" className={classes.section} onClick={handleClick}>
-        <img src="" alt="thumbnail" />
+        <img src="/junstone.png" alt="thumbnail" />
       </sector>
       <sector id="title2" className={classes.section} onClick={handleClick}>
         <img src="" alt="thumbnail" />
