@@ -12,10 +12,14 @@ export default function Process({ params }) {
   console.log(params.title);
 
   useEffect(() => {
-    setTimeout(() => {
+    // Set a timeout and store its reference
+    const timeoutId = setTimeout(() => {
       router.push(`/issue/${params.title}`);
     }, 8000);
-  });
+
+    // Cleanup function to clear the timeout
+    return () => clearTimeout(timeoutId);
+  }, []); // Empty dependency array to run only once on mount
 
   return (
     <main className="flex justify-center items-center h-screen">
