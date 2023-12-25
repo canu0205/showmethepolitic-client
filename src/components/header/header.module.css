@@ -1,7 +1,8 @@
 .header {
-  position: fixed;
+  position: sticky;
   top: 0.5rem;
   font-size: 2rem;
   width: 100%;
   left: 1rem;
+  margin-bottom: 1rem; /* Add space below the header */
 }
