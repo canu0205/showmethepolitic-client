@@ -1,3 +1,4 @@
+// page.jsx
 "use client";
 
 import classes from "./process.module.css";
@@ -22,8 +23,9 @@ export default function Process({ params }) {
   }, []); // Empty dependency array to run only once on mount
 
   return (
-    <main className="flex justify-center items-center h-screen">
-      <ProcessingSymbol />
-    </main>
+    <main className={`${classes.main} flex flex-col justify-center items-center relative`}>
+    <ProcessingSymbol />
+    <div className={classes.processingText}>AI가 답변을 만들어내고 있습니다. 잠시만 기다려주십시오.</div>
+  </main>
   );
 }

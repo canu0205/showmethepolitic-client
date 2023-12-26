@@ -15,7 +15,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex justify-center items-center flex-col gap-[20px] ">
+    <main className={`${classes.main} flex justify-center items-center flex-col gap-[20px] `}>
       <section id="title1" className={classes.section} onClick={handleClick}>
         <img id="title1" src="/junstone.png" alt="thumbnail" />
         <div id="title1">이준석 신당</div>

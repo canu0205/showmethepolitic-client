@@ -1,6 +1,18 @@
+.main {
+  height: calc(100vh - 120px - 2rem);
+  display: flex;
+  flex-direction: column;
+}
+
 
 .section {
-  position: relative; /* Needed for absolute positioning of child elements */
+  height: 56.25%; /* Set height to 56.25% to maintain a 16:9 aspect ratio */
+  max-height: 225px; /* Set max-height to 225px */
+  margin-left: 20px;  /* Add left margin */
+  margin-right: 20px; /* Add right margin */
+  flex: 1 2 auto; /* Change flex-shrink to 2 */
+  position: relative;
+  overflow: hidden; /* Add this line */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,30 +20,37 @@
   padding: 20px;
   border-radius: 36px;
   transition: transform 0.2s ease-in-out;
+  /* max-height: 100%; /* Add this line */
+  aspect-ratio: 9/5; /* Add this line */
 }
 
-@media (max-width: 600px) { /* Adjust the max-width as needed for your breakpoint */
+@media (max-width: 400px) {
   .section {
-    margin-left: 20px;  /* Add left margin */
-    margin-right: 20px; /* Add right margin */
+    height: auto; /* Allow the section to shrink */
+    max-height: none; /* Remove the max-height limit */
   }
 }
+
 
 .section:hover {
   transform: scale(1.05); /* Slightly enlarge the section on hover */
 }
 
 .section img {
+  position: absolute; /* Add this line */
+  top: 0; /* Add this line */
+  left: 0; /* Add this line */
   width: 100%;
   height: auto;
+  object-fit: cover;
   border-radius: 36px;
 }
 
 .section div {
   position: absolute;
-  left: 40px; /* Align to the left */
-  bottom: 20px; /* Align to the bottom */
-  font-size: calc(24px + 1vw); /* Responsive font size with a minimum of 24px */
+  left: 10px; /* Align to the left */
+  bottom: 10px; /* Align to the bottom */
+  font-size: calc(16px + 1vw); /* Responsive font size with a minimum of 24px */
   color: white; /* Text color */
   background-color: transparent; /* Semi-transparent background */
   padding: 5px;
